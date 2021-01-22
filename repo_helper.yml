@@ -1,0 +1,33 @@
+# Configuration for 'repo_helper' (https://github.com/domdfcoding/repo_helper)
+---
+modname: 'repo_helper_github_interactive'
+copyright_years: '2021'
+author: 'Dominic Davis-Foster'
+email: 'dominic@davis-foster.co.uk'
+username: 'repo-helper'
+assignee: 'domdfcoding'
+version: '0.0.0'
+license: 'MIT'
+short_desc: 'Interactive session for ''repo_helper_github''.'
+
+enable_conda: false
+on_pypi: false
+enable_docs: false
+enable_tests: false
+
+
+entry_points:
+ repo_helper.command:
+  - repo_helper_github_interactive=repo_helper_github_interactive.:github
+
+
+python_versions:
+ - 3.6
+ - 3.7
+ - 3.8
+ - 3.9
+ - 3.10-dev
+
+keywords:
+ - github
+ - repo-helper
