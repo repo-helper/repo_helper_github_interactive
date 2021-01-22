@@ -113,21 +113,21 @@ def parse_command(command: str) -> Tuple[Optional[str], Tuple[str, ...]]:
 		longest_command = max(4, longest_command)
 
 		for click_command in github.commands.values():
-			print(f"  {click_command.name.rjust(longest_command)} -- {click_command.help}")
-		print(f"  {'help'.rjust(longest_command)} -- Show this help message.")
-		print(f"  {'quit'.rjust(longest_command)} -- Exit the interactive prompt.")
+			click.echo(f"  {click_command.name.rjust(longest_command)} -- {click_command.help}")
+		click.echo(f"  {'help'.rjust(longest_command)} -- Show this help message.")
+		click.echo(f"  {'quit'.rjust(longest_command)} -- Exit the interactive prompt.")
 	elif command in github.commands:
 		if command == "labels":
 			return "create_labels", tuple(args)
 		else:
 			return command, tuple(args)
 	else:
-		print(f"Error: Unknown command {command!r}")
+		click.echo(f"Error: Unknown command {command!r}")
 		# stdlib
 		import difflib
 		matches = difflib.get_close_matches(command, github.commands.keys())
 		if matches:
-			print(f"Did you mean {matches[0]!r}?")
+			click.echo(f"Did you mean {matches[0]!r}?")
 
 	return None, ()
 
@@ -181,9 +181,9 @@ def interactive_prompt(
 		'username' in repo_helper.yml.
 	"""
 
-	print("repo_helper_github interactive prompt.")
-	print(f"Version {repo_helper_github.__version__}")
-	print(f"Type 'help' for help or 'quit' to exit.")
+	click.echo("repo_helper_github interactive prompt.")
+	click.echo(f"Version {repo_helper_github.__version__}")
+	click.echo(f"Type 'help' for help or 'quit' to exit.")
 
 	readline.set_history_length(-1)
 	readline.set_auto_history(True)  # type: ignore  # TODO
