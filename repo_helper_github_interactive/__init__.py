@@ -36,6 +36,7 @@ from typing import Optional, Tuple
 # 3rd party
 import appdirs  # type: ignore
 import click
+import repo_helper_github
 from consolekit.input import prompt
 from consolekit.terminal_colours import ColourTrilean
 from domdf_python_tools.paths import PathPlus
@@ -108,7 +109,13 @@ def parse_command(command: str) -> Tuple[Optional[str], Tuple[str, ...]]:
 	if command in {'q', "quit"}:
 		raise KeyboardInterrupt
 	elif command in {'h', "help"}:
-		print("TODO")
+		longest_command = max(len(click_command.name) for click_command in github.commands.values())
+		longest_command = max(4, longest_command)
+
+		for click_command in github.commands.values():
+			print(f"  {click_command.name.rjust(longest_command)} -- {click_command.help}")
+		print(f"  {'help'.rjust(longest_command)} -- Show this help message.")
+		print(f"  {'quit'.rjust(longest_command)} -- Exit the interactive prompt.")
 	elif command in github.commands:
 		if command == "labels":
 			return "create_labels", tuple(args)
@@ -173,6 +180,10 @@ def interactive_prompt(
 	:param org: Indicates the repository belongs to the organisation configured as
 		'username' in repo_helper.yml.
 	"""
+
+	print("repo_helper_github interactive prompt.")
+	print(f"Version {repo_helper_github.__version__}")
+	print(f"Type 'help' for help or 'quit' to exit.")
 
 	readline.set_history_length(-1)
 	readline.set_auto_history(True)  # type: ignore  # TODO
