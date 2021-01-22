@@ -18,7 +18,7 @@ enable_tests: false
 
 entry_points:
  repo_helper.command:
-  - repo_helper_github_interactive=repo_helper_github_interactive.:github
+  - repo_helper_github_interactive=repo_helper_github_interactive.cli:github
 
 
 python_versions:
@@ -31,3 +31,9 @@ python_versions:
 keywords:
  - github
  - repo-helper
+
+classifiers:
+ - 'Development Status :: 4 - Beta'
+ - 'Environment :: Console'
+ - "Intended Audience :: Developers"
+ - 'Topic :: Software Development :: Version Control :: Git'
