@@ -15,11 +15,9 @@ on_pypi: false
 enable_docs: false
 enable_tests: false
 
-
 entry_points:
  repo_helper.command:
   - repo_helper_github_interactive=repo_helper_github_interactive.cli:github
-
 
 python_versions:
  - 3.6
@@ -37,3 +35,5 @@ classifiers:
  - 'Environment :: Console'
  - "Intended Audience :: Developers"
  - 'Topic :: Software Development :: Version Control :: Git'
+
+mypy_version: "0.800"

@@ -186,7 +186,7 @@ def interactive_prompt(
 	click.echo(f"Type 'help' for help or 'quit' to exit.")
 
 	readline.set_history_length(-1)
-	readline.set_auto_history(True)  # type: ignore  # TODO
+	readline.set_auto_history(True)
 
 	parser = InteractiveParser()
 	manager = GitHubManager(token, PathPlus.cwd(), verbose=verbose, colour=colour)
