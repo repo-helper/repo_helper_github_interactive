@@ -29,12 +29,13 @@ Interactive session for 'repo_helper_github'.
 #
 
 # stdlib
+import difflib
 import readline
 import sys
 from typing import Optional, Tuple
 
 # 3rd party
-import appdirs  # type: ignore
+import appdirs
 import click
 import repo_helper_github
 from consolekit.input import prompt
@@ -119,12 +120,12 @@ def parse_command(command: str) -> Tuple[Optional[str], Tuple[str, ...]]:
 	elif command in github.commands:
 		if command == "labels":
 			return "create_labels", tuple(args)
-		else:
+		elif command == "protect_branch":
 			return command, tuple(args)
+		else:
+			return command.replace('-', '_'), tuple(args)
 	else:
 		click.echo(f"Error: Unknown command {command!r}")
-		# stdlib
-		import difflib
 		matches = difflib.get_close_matches(command, github.commands.keys())
 		if matches:
 			click.echo(f"Did you mean {matches[0]!r}?")
