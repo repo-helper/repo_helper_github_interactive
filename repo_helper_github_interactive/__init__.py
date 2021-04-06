@@ -32,6 +32,7 @@ Interactive session for 'repo_helper_github'.
 import difflib
 import readline
 import sys
+import traceback
 from typing import Optional, Tuple
 
 # 3rd party
@@ -192,6 +193,9 @@ def interactive_prompt(
 	parser = InteractiveParser()
 	manager = GitHubManager(token, PathPlus.cwd(), verbose=verbose, colour=colour)
 
+	# This will catch a missing --org option error earlier
+	manager.get_org_or_user(org)
+
 	readline.parse_and_bind("tab: complete")
 	readline.set_completer(parser.complete)
 	HISTORY_FILE.read()
@@ -205,7 +209,10 @@ def interactive_prompt(
 
 				command, args = parse_command(command)
 				if command is not None:
-					getattr(manager, command)(*args, org=org)
+					try:
+						getattr(manager, command)(*args, org=org)
+					except Exception:
+						click.echo(traceback.format_exc())
 
 	except (KeyboardInterrupt, EOFError, click.Abort):
 		click.echo("\nExiting...")
