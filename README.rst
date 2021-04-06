@@ -20,7 +20,7 @@ repo_helper_github_interactive
 	* - Activity
 	  - |commits-latest| |commits-since| |maintained|
 	* - QA
-	  - |codefactor| |actions_flake8| |actions_mypy| |pre_commit_ci|
+	  - |codefactor| |actions_flake8| |actions_mypy|
 	* - Other
 	  - |license| |language| |requires|
 
@@ -69,10 +69,6 @@ repo_helper_github_interactive
 
 .. |maintained| image:: https://img.shields.io/maintenance/yes/2021
 	:alt: Maintenance
-
-.. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/repo-helper/repo_helper_github_interactive/master.svg
-	:target: https://results.pre-commit.ci/latest/github/repo-helper/repo_helper_github_interactive/master
-	:alt: pre-commit.ci status
 
 .. end shields
 
