@@ -67,7 +67,7 @@ repo_helper_github_interactive
 	:target: https://github.com/repo-helper/repo_helper_github_interactive/commit/master
 	:alt: GitHub last commit
 
-.. |maintained| image:: https://img.shields.io/maintenance/yes/2023
+.. |maintained| image:: https://img.shields.io/maintenance/yes/2024
 	:alt: Maintenance
 
 .. end shields
