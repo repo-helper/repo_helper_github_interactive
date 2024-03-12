@@ -40,5 +40,5 @@ known_third_party = [
     "repo_helper_github",
     "requests",
 ]
-known_first_party = "repo_helper_github_interactive"
+known_first_party = [ "repo_helper_github_interactive",]
 line_length = 115
