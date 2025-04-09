@@ -21,11 +21,10 @@ entry_points:
   - repo_helper_github_interactive=repo_helper_github_interactive.cli:github
 
 python_versions:
- - 3.6
  - 3.7
  - 3.8
  - 3.9
- - 3.10-dev
+ - "3.10"
 
 keywords:
  - github
