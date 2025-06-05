@@ -40,3 +40,17 @@ classifiers:
  - 'Topic :: Software Development :: Version Control :: Git'
 
 mypy_version: "0.800"
+
+github_ci_requirements:
+ Linux:
+  post:
+   # Prefery binary wheels for older versions over sdists for newer ones
+   - pip config set global.prefer-binary true
+ Windows:
+  post:
+   # Prefery binary wheels for older versions over sdists for newer ones
+   - pip config set global.prefer-binary true
+ macOS:
+  post:
+   # Prefery binary wheels for older versions over sdists for newer ones
+   - pip config set global.prefer-binary true
