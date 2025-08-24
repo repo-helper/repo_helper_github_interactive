@@ -36,8 +36,8 @@ import traceback
 from typing import Optional, Tuple
 
 # 3rd party
-import appdirs
 import click
+import platformdirs
 import repo_helper_github
 from consolekit.input import prompt
 from consolekit.terminal_colours import ColourTrilean
@@ -65,7 +65,7 @@ class History:
 	file: PathPlus
 
 	def __init__(self):
-		self.file = PathPlus(appdirs.user_config_dir("github", "repo-helper")) / "interactive.hist"
+		self.file = PathPlus(platformdirs.user_config_dir("github", "repo-helper")) / "interactive.hist"
 
 	def read(self):
 		"""

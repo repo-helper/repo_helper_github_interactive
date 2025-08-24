@@ -28,11 +28,11 @@ use_parentheses = true
 remove_redundant_aliases = true
 default_section = "THIRDPARTY"
 known_third_party = [
-    "appdirs",
     "click",
     "consolekit",
     "domdf_python_tools",
     "github",
+    "platformdirs",
     "repo_helper_github",
     "requests",
 ]
