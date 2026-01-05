@@ -33,10 +33,10 @@ import difflib
 import readline
 import sys
 import traceback
-from typing import Optional, Tuple
+from typing import List, Optional, Tuple
 
 # 3rd party
-import click
+import click  # type: ignore[import-untyped]
 import platformdirs
 import repo_helper_github
 from consolekit.input import prompt
@@ -67,7 +67,7 @@ class History:
 	def __init__(self):
 		self.file = PathPlus(platformdirs.user_config_dir("github", "repo-helper")) / "interactive.hist"
 
-	def read(self):
+	def read(self) -> None:
 		"""
 		Read the history file.
 		"""
@@ -75,7 +75,7 @@ class History:
 		if self.file.is_file():
 			readline.read_history_file(str(self.file))
 
-	def write(self):
+	def write(self) -> None:
 		"""
 		Read modified history file to disk.
 		"""
@@ -84,7 +84,7 @@ class History:
 		readline.write_history_file(str(self.file))
 
 	@staticmethod
-	def get_history_items():
+	def get_history_items() -> List[str]:
 		"""
 		Returns a list of items in the readline history.
 		"""

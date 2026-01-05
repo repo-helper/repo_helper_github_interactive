@@ -39,8 +39,6 @@ classifiers:
  - "Intended Audience :: Developers"
  - 'Topic :: Software Development :: Version Control :: Git'
 
-mypy_version: "0.800"
-
 github_ci_requirements:
  Linux:
   post:
