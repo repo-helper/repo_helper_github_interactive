@@ -185,7 +185,7 @@ def interactive_prompt(
 
 	click.echo("repo_helper_github interactive prompt.")
 	click.echo(f"Version {repo_helper_github.__version__}")
-	click.echo(f"Type 'help' for help or 'quit' to exit.")
+	click.echo("Type 'help' for help or 'quit' to exit.")
 
 	readline.set_history_length(-1)
 	readline.set_auto_history(True)

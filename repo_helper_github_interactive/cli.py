@@ -35,7 +35,12 @@ __all__ = ["github", "interactive"]
 
 @options
 @github_command()
-def interactive(token: str, verbose: bool = False, colour: ColourTrilean = None, org: bool = False) -> None:  # noqa: PRM002
+def interactive(  # noqa: PRM002
+		token: str,
+		verbose: bool = False,
+		colour: ColourTrilean = None,
+		org: bool = False,
+		) -> None:
 	"""
 	Launch an interactive console to perform multiple actions.
 	"""
