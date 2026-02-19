@@ -3,7 +3,7 @@ requires = [ "whey",]
 build-backend = "whey"
 
 [project]
-name = "repo_helper_github_interactive"
+name = "repo-helper-github-interactive"
 version = "0.0.0"
 description = "Interactive session for 'repo_helper_github'."
 readme = "README.rst"
@@ -39,6 +39,7 @@ python-versions = [ "3.7", "3.8", "3.9", "3.10", "3.11", "3.12", "3.13",]
 python-implementations = [ "CPython",]
 platforms = [ "Windows", "macOS", "Linux",]
 license-key = "MIT"
+package = "repo_helper_github_interactive"
 
 [tool.mypy]
 python_version = "3.9"
